@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacking my trip</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Hacking My Trip</h1>
+      <h3>Airplanes tickets</h3>
+    </div>
+
+    <div style="background:transparent !important" class="jumbotron text-center">
+        <form method="POST" action="/send" role="form", name="petform">
+          <div class ="col-sm-6">
+            <div class="form-group">
+              <label for="inputName">From:</label>
+              <input type="text" class="form-control" id="inputName" name="desde" placeholder="Mexico" required>
+            </div>
+          </div>
+          
+          <div class ="col-sm-6">
+            <div class="form-group">
+            <label for="inputType">To:</label>
+            <input type="text" class="form-control" id="inputType" name="hasta" placeholder="Paris" required>
+            </div>
+          </div>
+
+          <div class ="col-sm-4">
+            <div class="form-group">
+            <label for="inputAge"></label>
+            <input type="text" class="form-control" id="datepicker" name="fecha" placeholder="10/08/2019" required>
+            <script>
+                $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap'
+                });
+            </script>
+            </div>
+          </div>
+
+          <div class ="col-sm-12">
+          <input type="submit" value="Find fun!" class="btn btn-primary btn-lg">
+            </div>
+        </form>
+
+    </div>
+    
+  </div>
+  
+  <script src="app.js"></script>
+
+</body>
+
+</html>
