@@ -25,16 +25,16 @@ from sqlalchemy import create_engine
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-#app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/flights.sqlite"
-#db = SQLAlchemy(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/flights_data.sqlite"
+db = SQLAlchemy(app)
 # reflect an existing database into a new model
-#Base = automap_base()
+Base = automap_base()
 # reflect the tables
-#Base.prepare(db.engine, reflect=True)
+Base.prepare(db.engine, reflect=True)
 
 # Save references to each table
-#Samples_Metadata = Base.classes.sample_metadata
-#Samples = Base.classes.samples
+Samples_Metadata = Base.classes.sample_metadata
+Samples = Base.classes.samples
 
 
 # Route to render index.html template using data from Mongo
@@ -50,7 +50,8 @@ def send():
         p_from = request.form["desde"]
         p_to = request.form["hasta"]
         p_date = request.form["fecha"]
-    return render_template("results.html")
+    return render_template("results.html", p_from=p_from, p_to=p_to, p_date=p_date)
+
 
 
 if __name__ == "__main__":
