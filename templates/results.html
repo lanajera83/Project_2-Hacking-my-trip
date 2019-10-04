@@ -17,8 +17,42 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Check this data is awsome!</h1>
+      <p>Use the interactive charts below to explore the results</p>
     </div>
   </div>
+ 
+  <div class="container">
+      
+      <div class="col-md-4">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">FROM</div>
+          <div class="panel-body">Mexico</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">TO</div>
+          <div class="panel-body">Paris</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">DATE</div>
+          <div class="panel-body">10/10/2019</div>
+        </div>
+      </div>
+    </div>
+
+<!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
+
+
   
   <script src="app.js"></script>
 

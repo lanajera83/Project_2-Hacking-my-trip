@@ -13,11 +13,29 @@ from flask import (
 
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+import pandas as pd
+import numpy as np
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
 # Create an instance of Flask
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-mongo = PyMongo(app, uri="mongodb://localhost:27017/flights_app")
+#app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/flights.sqlite"
+#db = SQLAlchemy(app)
+# reflect an existing database into a new model
+#Base = automap_base()
+# reflect the tables
+#Base.prepare(db.engine, reflect=True)
+
+# Save references to each table
+#Samples_Metadata = Base.classes.sample_metadata
+#Samples = Base.classes.samples
+
 
 # Route to render index.html template using data from Mongo
 @app.route("/")
