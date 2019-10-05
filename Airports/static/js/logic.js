@@ -20,8 +20,8 @@ function createMap(WorldAirports) {
 
   // Create the map object with options
   var map = L.map("map", {
-    center: [38.5994, -28.6731],
-    zoom: 2.5,
+    center: [15.5994, -28.6731],
+    zoom: 3,
     layers: [baseMap, WorldAirports]
   });
 
@@ -52,3 +52,16 @@ function createMarkers(response) {
 
 // Perform an API call to the Citi Bike API to get station information. Call createMarkers when complete
 d3.json("airports.json", createMarkers);
+
+// console.log(destiny_lat);
+// var line = [
+//   [origin_lat, origin_lon],
+//   [destiny_lat, destiny_lon]
+//   // [51.507222, -0.1275],
+//   // [16.86287, -99.887009],
+// ];
+
+// // Create a polyline using the line coordinates and pass in some initial options
+// L.polyline(line, {
+//   color: "red"
+// }).addTo(map);

@@ -1,7 +1,7 @@
 from sqlalchemy import func
 from flask_pymongo import PyMongo
 from forms import SearchForm
-import scrape_flights
+# import scrape_flights
 import pymongo
 
 from flask import (
@@ -33,8 +33,8 @@ Base = automap_base()
 Base.prepare(db.engine, reflect=True)
 
 # Save references to each table
-Samples_Metadata = Base.classes.sample_metadata
-Samples = Base.classes.samples
+#Samples_Metadata = Base.classes.sample_metadata
+#Samples = Base.classes.samples
 
 
 # Route to render index.html template using data from Mongo
@@ -50,7 +50,7 @@ def send():
         p_from = request.form["desde"]
         p_to = request.form["hasta"]
         p_date = request.form["fecha"]
-    return render_template("results.html", p_from=p_from, p_to=p_to, p_date=p_date)
+    return render_template("results2.html", p_from=p_from, p_to=p_to, p_date=p_date)
 
 
 
